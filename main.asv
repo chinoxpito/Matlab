@@ -4,7 +4,7 @@ clc
 disp('Iniciar...');
 option=0;
 
-while option == 0
+while option==0
 
 Fs = 44100;
 %Fs = input('Ingrese Fs:');
@@ -27,6 +27,3 @@ audiowrite(filename,y,Fs);
 plot(y);
 % Play back the recording.
 sound(y,Fs);
-option= input('Muestrear nuevamente aprete 0:');
-end
-disp('Programa finalizado');
