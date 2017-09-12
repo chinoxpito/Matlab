@@ -27,6 +27,14 @@ audiowrite(filename,y,Fs);
 plot(y);
 % Play back the recording.
 sound(y,Fs);
+
+espv = abs(fft(y));
+subplot(2,1,1),plot(y),grid on, zoom, title('Señal Original'),xlabel('Frecuencia (Hrz)'), ylabel('Magni compo de f');
+subplot(2,1,2),plot(espv),grid on, zoom, title('FFT PRUEBA');
+
+y_norm=y/max(abs(y));%normalizar señal a [-1,1]
+
+%
 option= input('Muestrear nuevamente aprete 0:');
 end
 disp('Programa finalizado');
